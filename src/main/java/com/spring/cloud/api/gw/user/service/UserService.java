@@ -18,8 +18,8 @@ public class UserService {
 
     public String getHello(String userName, String orderName, String payType) {
         String resultUser = authClient.getToken(userName);
-        String resultOrder = orderClient.getOrderName(orderName);
-        String resultPay = payClient.getPayName(payType);
+        String resultOrder = orderClient.getName(orderName);
+        String resultPay = payClient.getType(payType);
 
         log.info("resultOrder={}", resultOrder);
         log.info("resultUser={}", resultUser);
