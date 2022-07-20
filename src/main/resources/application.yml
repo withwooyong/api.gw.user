@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+# 나자신은 등록하지 않음
+eureka.client.register-with-eureka: false
+# 마이크로 서비스 인스턴스 목록을 로컬에 캐시할 것인지의 여부
+eureka.client.fetch-registry: false
+## 아래 설정이 없으면 다음 에러
+eureka.client.service-url.defaultZone: http://localhost:${server.port}/eureka/
+
+external-api:
+  auth:
+    url: http://localhost:8082
+  order:
+    url: http://localhost:8091
+  pay:
+    url: http://localhost:8092
