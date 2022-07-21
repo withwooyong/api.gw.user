@@ -9,9 +9,20 @@ eureka.client.fetch-registry: false
 eureka.client.service-url.defaultZone: http://localhost:${server.port}/eureka/
 
 external-api:
+  #  user:
+  #    url: http://localhost:8081
   auth:
-    url: http://localhost:8082
+    url: http://localhost:8082/auth
   order:
-    url: http://localhost:8091
+    url: http://localhost:8091/order
   pay:
     url: http://localhost:8092
+
+logging:
+  level:
+    com.spring.cloud: DEBUG
+
+spring:
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true

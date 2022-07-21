@@ -16,20 +16,33 @@ public class UserService {
     private final OrderClient orderClient;
     private final PayClient payClient;
 
-    public String getHello(String userName, String orderName, String payType) {
+    public String getHello(String hello) {
+        return hello;
+    }
+
+    public String getAuth(String userName) {
+        return authClient.getToken(userName);
+    }
+
+    public String getOrder(String orderName) {
+        return orderClient.getName(orderName);
+    }
+
+    public String getPay(String payType, int price) {
+        return payClient.getPay(payType, price);
+    }
+
+    public String getGwHello(String userName, String orderName, String payType, int price) {
         String resultUser = authClient.getToken(userName);
         String resultOrder = orderClient.getName(orderName);
-        String resultPay = payClient.getType(payType);
+        String resultPay = payClient.getPay(payType, price);
 
         log.info("resultOrder={}", resultOrder);
         log.info("resultUser={}", resultUser);
         log.info("resultPay={}", resultPay);
 
-        return new StringBuilder()
-                .append(resultUser).append("-")
-                .append(resultOrder).append("-")
-                .append(resultPay).toString();
+        return resultUser + "-" +
+                resultOrder + "-" +
+                resultPay;
     }
-
-
 }

@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface AuthClient {
 
     @GetMapping(path = "/token")
-    String getToken(@RequestParam String userName);
+    String getToken(@RequestParam(name = "userName") String userName);
 }

@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface OrderClient {
 
     @GetMapping(path = "/name")
-    String getName(@RequestParam String name);
+    String getName(@RequestParam(name = "name") String name);
 
 }
