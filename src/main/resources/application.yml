@@ -20,7 +20,7 @@ external-api:
 
 logging:
   level:
-    com.spring.cloud: DEBUG
+    com.spring.cloud.api.gw: DEBUG
 
 spring:
   jackson:
